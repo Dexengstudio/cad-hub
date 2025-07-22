@@ -4,14 +4,14 @@ import { reactRouter } from '@react-router/dev/vite';
 
 export default defineConfig(() => ({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/apps/web',
-  server:{
-    port: 4200,
-    host: 'localhost',
+  cacheDir: "../../node_modules/.vite/apps/web",
+  server: {
+    port: 3000,
+    host: "cad-challenges.localhost",
   },
-  preview:{
-    port: 4300,
-    host: 'localhost',
+  preview: {
+    port: 3000,
+    host: "cad-challenges.localhost",
   },
   plugins: [!process.env.VITEST && reactRouter()],
   // Uncomment this if you are using workers.
@@ -19,7 +19,7 @@ export default defineConfig(() => ({
   //  plugins: [ nxViteTsPaths() ],
   // },
   build: {
-    outDir: './dist',
+    outDir: "./dist",
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
