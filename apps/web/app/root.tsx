@@ -4,11 +4,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  type MetaFunction, 
-  type LinksFunction
+  type MetaFunction,
+  type LinksFunction,
 } from "react-router";
 
-import { AppNav } from './app-nav'
+import "./app.css";
+
+import { AppNav } from "./app-nav";
+
 
 export const meta: MetaFunction = () => ([{
   title: "New Nx React Router App",
