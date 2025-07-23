@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 import { reactRouter } from '@react-router/dev/vite';
 import tailwindcss from "@tailwindcss/vite";
-
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(() => ({
   root: __dirname,
@@ -15,7 +15,11 @@ export default defineConfig(() => ({
     port: 3000,
     host: "cad-challenges.localhost",
   },
-  plugins: [!process.env.VITEST && reactRouter(), tailwindcss()],
+  plugins: [
+    !process.env.VITEST && reactRouter(),
+    tailwindcss(),
+    tsconfigPaths(),
+  ],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
