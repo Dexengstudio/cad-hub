@@ -37,6 +37,18 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --header-height: 64px;
+
+  --surface-primary: var(--grayscale-50);
+  --surface-secondary: var(--grayscale-100);
+  --surface-tertiary: var(--grayscale-200);
+
+  /* Text rendering optimizations */
+  text-rendering: geometricprecision;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .dark {
@@ -72,6 +84,10 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+
+    --surface-primary: var(--grayscale-50);
+  --surface-secondary: var(--grayscale-100);
+  --surface-tertiary: var(--grayscale-200);
 }
 
 @theme inline {
