@@ -1,5 +1,5 @@
 import { Hexagon } from "lucide-react";
-import Logo from "../logo";
+// import Logo from "../logo";
 
 import {
   Popover,
