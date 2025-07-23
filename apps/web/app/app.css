@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@source '../../../libs/ui/src/components/';
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -88,6 +90,43 @@
     --surface-primary: var(--grayscale-50);
   --surface-secondary: var(--grayscale-100);
   --surface-tertiary: var(--grayscale-200);
+
+
+  /* // more variables from UI grid-template */
+
+  --accent-50: oklch(0.9647 0.0377 260.1);
+  --accent-rgb-50: 239, 246, 255;
+
+  --accent-100: oklch(0.9238 0.0526 258.2);
+  --accent-rgb-100: 219, 234, 254;
+
+  --accent-200: oklch(0.8448 0.0704 257.5);
+  --accent-rgb-200: 191, 219, 254;
+
+  --accent-300: oklch(0.7347 0.0902 257.5);
+  --accent-rgb-300: 147, 197, 253;
+
+  --accent-400: oklch(0.6157 0.1068 257.9);
+  --accent-rgb-400: 96, 165, 250;
+
+  --accent-500: oklch(0.5048 0.1272 257.8);
+  --accent-rgb-500: 59, 130, 246;
+
+  --accent-600: oklch(0.4202 0.1224 258.1);
+  --accent-rgb-600: 37, 99, 235;
+
+  --accent-700: oklch(0.3406 0.1098 258.0);
+  --accent-rgb-700: 29, 78, 216;
+
+  --accent-800: oklch(0.2760 0.1005 258.2);
+  --accent-rgb-800: 30, 64, 175;
+
+  --accent-900: oklch(0.2237 0.0888 258.4);
+  --accent-rgb-900: 30, 58, 138;
+
+  --accent-950: oklch(0.1613 0.0752 258.7);
+  --accent-rgb-950: 23, 37, 84;
+
 }
 
 @theme inline {

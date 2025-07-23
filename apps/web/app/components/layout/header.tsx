@@ -1,3 +1,4 @@
+import { Hexagon } from "lucide-react";
 import Logo from "../logo";
 
 import {
@@ -30,7 +31,8 @@ export default function Component() {
           {/* Main nav */}
           <div className="flex items-center gap-6">
             <a href="/#" className="text-primary hover:text-primary/90">
-              <Logo />
+              {/* <Logo /> */}
+              <Hexagon className="h-10 w-10" />
             </a>
             {/* Navigation menu */}
             <NavigationMenu className="max-md:hidden">
