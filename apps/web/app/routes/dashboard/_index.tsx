@@ -1,4 +1,4 @@
-export default function DashboardIndex() {
+export default function Dashboard() {
   return (
     <div>
       <h1 className="text-2xl font-bold">Individual Dashboard</h1>
