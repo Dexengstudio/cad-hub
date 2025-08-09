@@ -7,7 +7,14 @@ import {
 } from "@react-router/dev/routes";
 
 export default [
-  layout("./routes/_layout.tsx", [index("./routes/_index.tsx")]),
+  layout("./routes/_layout.tsx", [
+    index("./routes/_index.tsx"),
+
+    // these are public challenges, they do not require authentication and they do not register leaderboard entries
+
+    route("challenges", "./routes/challenges/_index.tsx"),
+    route("challenges/:challengeId", "./routes/challenges/challenge.tsx"),
+  ]),
 
   ...prefix("/auth", [
     layout("./routes/auth/_layout.tsx", [

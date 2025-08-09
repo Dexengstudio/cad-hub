@@ -11,18 +11,19 @@ import {
   NavigationMenuList,
   Button,
 } from "@cad-challenges-hub/ui";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { useAuth } from "../../hooks/use-auth";
 
 // Navigation links array to be used in both desktop and mobile menus
-const navigationLinks = [
-  { href: "#", label: "Home", active: true },
-  { href: "#", label: "Features" },
-  { href: "#", label: "Pricing" },
-  { href: "#", label: "About" },
-];
 
-export default function Component() {
+interface HeaderProps {
+  mainLinks: Array<{
+    href: string;
+    label: string;
+  }>;
+}
+
+export default function Header({ mainLinks }: HeaderProps) {
   const { user, logout } = useAuth();
   return (
     <header className="border-b ">
@@ -40,23 +41,29 @@ export default function Component() {
               Dexcad
             </Link>
             {/* Navigation menu */}
-            {/* <NavigationMenu className="max-md:hidden">
-              <NavigationMenuList className="gap-2">
-                {navigationLinks.map((link, index) => (
-                  <NavigationMenuItem key={index}>
-                    <NavigationMenuLink
-                      active={link.active}
-                      href={link.href}
-                      className="text-muted-foreground hover:text-primary py-1.5 font-medium"
-                    >
-                      {link.label}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu> */}
           </div>
         </div>
+        <NavigationMenu className="max-md:hidden">
+          <NavigationMenuList className="gap-2">
+            {mainLinks.map((link, index) => (
+              <NavigationMenuItem key={index}>
+                <NavigationMenuLink asChild>
+                  <NavLink
+                    to={link.href}
+                    className={({ isActive }) =>
+                      [
+                        "text-muted-foreground hover:text-primary py-1.5 font-medium",
+                        isActive ? "text-blue-300" : "",
+                      ].join(" ")
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
 
         {/* Right side */}
         <div className="flex items-center gap-2">
@@ -121,12 +128,12 @@ export default function Component() {
           <PopoverContent align="start" className="p-1 w-36 md:hidden">
             <NavigationMenu className="max-w-none *:w-full">
               <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
-                {navigationLinks.map((link, index) => (
+                {mainLinks.map((link, index) => (
                   <NavigationMenuItem key={index} className="w-full">
                     <NavigationMenuLink
                       href={link.href}
                       className="py-1.5"
-                      active={link.active}
+                      // active={link.active}
                     >
                       {link.label}
                     </NavigationMenuLink>

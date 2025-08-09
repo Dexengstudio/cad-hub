@@ -15,11 +15,7 @@ export default defineConfig(() => ({
     port: 3000,
     host: "cad-challenges.localhost",
   },
-  plugins: [
-    !process.env.VITEST && reactRouter(),
-    tailwindcss(),
-    tsconfigPaths(),
-  ],
+  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],

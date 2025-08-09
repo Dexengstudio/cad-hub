@@ -8,10 +8,17 @@ import { useAuth } from "../hooks/use-auth";
 export default function Layout() {
   // hydrate auth (no explicit usage needed here)
   useAuth();
+
+  const mainLinks = [
+    { href: "/challenges", label: "Challenges" },
+    { href: "/#", label: "About" },
+    { href: "/#", label: "Blog" },
+    { href: "/#", label: "Contact" },
+  ];
   return (
     <div className="min-h-screen">
-      <Header />
-      <main className="">
+      <Header mainLinks={mainLinks} />
+      <main className="relative">
         <Outlet />
       </main>
       <Footer
@@ -29,12 +36,7 @@ export default function Layout() {
           //   label: "GitHub",
           // },
         ]}
-        mainLinks={[
-          { href: "/#", label: "Products" },
-          { href: "/#", label: "About" },
-          { href: "/#", label: "Blog" },
-          { href: "/#", label: "Contact" },
-        ]}
+        mainLinks={mainLinks}
         legalLinks={[
           { href: "/#", label: "Privacy" },
           { href: "/#", label: "Terms" },

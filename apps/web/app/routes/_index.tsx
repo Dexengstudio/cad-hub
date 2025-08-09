@@ -2,6 +2,8 @@ import FeaturesListHomepage from "@/components/sections/homepage-feature-list";
 import HeroHomepage from "@/components/sections/homepage-hero";
 // import { Layers, Target, Trophy, Zap } from "lucide-react";
 
+// import type {Route} from "./+types/_index"
+
 
 export default function HomePage() {
   const features = {
