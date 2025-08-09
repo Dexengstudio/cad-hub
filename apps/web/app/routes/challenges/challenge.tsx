@@ -3,9 +3,7 @@ import type { Route } from "./+types/challenge";
 import { getChallengeBySlug } from "@/lib/data/challenges";
 import {
   Alert,
-  AlertDescription,
   AlertTitle,
-  Badge,
   Card,
   CardContent,
   CardHeader,
@@ -13,7 +11,7 @@ import {
 } from "@cad-challenges-hub/ui";
 import RequirementsCard from "@/components/challenges/requirements-card";
 import SectionPage from "@/components/sections/section-page";
-import { ArrowLeft, Info, PopcornIcon, Terminal } from "lucide-react";
+import { ArrowLeft, Info } from "lucide-react";
 import { Link } from "react-router";
 
 export async function loader({ params }: Route.LoaderArgs) {
