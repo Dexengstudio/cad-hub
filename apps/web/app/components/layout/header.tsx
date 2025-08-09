@@ -11,6 +11,7 @@ import {
   NavigationMenuList,
   Button,
 } from "@cad-challenges-hub/ui";
+import { Link } from "react-router";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -30,12 +31,14 @@ export default function Component() {
 
           {/* Main nav */}
           <div className="flex items-center gap-6">
-            <a href="/#" className="text-primary hover:text-primary/90">
-              {/* <Logo /> */}
-              <Hexagon className="h-10 w-10" />
-            </a>
+            <Link to="/" className="flex items-center gap-2 font-medium">
+              <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
+                <Hexagon className="size-4" />
+              </div>
+              Dexcad
+            </Link>
             {/* Navigation menu */}
-            <NavigationMenu className="max-md:hidden">
+            {/* <NavigationMenu className="max-md:hidden">
               <NavigationMenuList className="gap-2">
                 {navigationLinks.map((link, index) => (
                   <NavigationMenuItem key={index}>
@@ -49,17 +52,17 @@ export default function Component() {
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>
-            </NavigationMenu>
+            </NavigationMenu> */}
           </div>
         </div>
 
         {/* Right side */}
         <div className="flex items-center gap-2">
           <Button asChild variant="ghost" size="sm" className="text-sm">
-            <a href="/#">Sign In</a>
+            <Link to="/auth/sign-in">Sign In</Link>
           </Button>
           <Button asChild size="sm" className="text-sm">
-            <a href="/#">Get Started</a>
+            <Link to="/auth/sign-up">Get Started</Link>
           </Button>
         </div>
 
