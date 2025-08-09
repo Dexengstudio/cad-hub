@@ -15,5 +15,17 @@ export default [
       route("sign-up", "./routes/auth/sign-up-form.tsx"),
     ]),
   ]),
+  ...prefix("/dashboard", [
+    layout("./routes/dashboard/_layout.tsx", [
+      index("./routes/dashboard/_index.tsx"),
+      route("profile", "./routes/dashboard/profile.tsx"),
+      route("tournaments", "./routes/dashboard/tournaments/_index.tsx"),
+      route("challenges", "./routes/dashboard/challenges/_index.tsx"),
+      route("submissions", "./routes/dashboard/submissions/_index.tsx"),
+      route("leaderboard", "./routes/dashboard/leaderboard.tsx"),
+      route("achievements", "./routes/dashboard/achievements.tsx"),
+      route("settings", "./routes/dashboard/settings.tsx"),
+    ]),
+  ]),
   route("about", "./routes/about.tsx"),
 ] satisfies RouteConfig;

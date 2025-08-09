@@ -3,8 +3,11 @@ import Header from "@/components/layout/header";
 import { Outlet } from "react-router";
 import { Hexagon } from "lucide-react";
 import { cn } from "@cad-challenges-hub/ui";
+import { useAuth } from "../hooks/use-auth";
 
 export default function Layout() {
+  // hydrate auth (no explicit usage needed here)
+  useAuth();
   return (
     <div className="min-h-screen">
       <Header />

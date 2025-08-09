@@ -12,6 +12,7 @@ import {
   Button,
 } from "@cad-challenges-hub/ui";
 import { Link } from "react-router";
+import { useAuth } from "../../hooks/use-auth";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -22,6 +23,7 @@ const navigationLinks = [
 ];
 
 export default function Component() {
+  const { user, logout } = useAuth();
   return (
     <header className="border-b ">
       <div className="flex items-center justify-between h-16 gap-4 px-4 py-2 mx-auto md:py-4 max-w-7xl md:px-6">
@@ -58,12 +60,27 @@ export default function Component() {
 
         {/* Right side */}
         <div className="flex items-center gap-2">
-          <Button asChild variant="ghost" size="sm" className="text-sm">
-            <Link to="/auth/sign-in">Sign In</Link>
-          </Button>
-          <Button asChild size="sm" className="text-sm">
-            <Link to="/auth/sign-up">Get Started</Link>
-          </Button>
+          {!user && (
+            <>
+              <Button asChild variant="ghost" size="sm" className="text-sm">
+                <Link to="/auth/sign-in">Sign In</Link>
+              </Button>
+              <Button asChild size="sm" className="text-sm">
+                <Link to="/auth/sign-up">Get Started</Link>
+              </Button>
+            </>
+          )}
+          {user && (
+            <div className="flex items-center gap-3">
+              <span className="text-sm">{user.email}</span>
+              <Button size="sm" variant="outline" onClick={() => logout()}>
+                Logout
+              </Button>
+              <Button asChild size="sm" className="text-sm" variant="secondary">
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+            </div>
+          )}
         </div>
 
         <Popover>
